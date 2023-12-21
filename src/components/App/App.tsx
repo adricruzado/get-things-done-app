@@ -1,11 +1,11 @@
-import TaskForm from "../TaskForm/TaskForm";
+import TaskContainer from "../TaskContainer/TaskContainer";
 import "./App.css";
 
 const App = (): React.ReactElement => {
   return (
-    <div>
-      <TaskForm />
-    </div>
+    <>
+      <TaskContainer />
+    </>
   );
 };
 
