@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+# Get Things Done App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The "Get Things Done" app is a simple task management application that allows users to create, update, delete, and mark tasks as done.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Task Creation**: Add tasks with descriptions.
+- **Task Management**: Mark tasks as done, edit descriptions, and delete tasks.
+- **User-Friendly Interface**: Intuitive and easy-to-use interface for managing tasks.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: Frontend framework for building the user interface.
+- **TypeScript**: Strongly typed language for enhanced code quality.
+- **UUID**: Library for generating unique IDs.
+- **Vite**: Frontend build tool for development and production.
+- **ESLint**: Tool for identifying and reporting on patterns found in JavaScript/TypeScript code.
+- **Vitest**: Test runner for testing.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+To run the app locally:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Clone the repository: `git clone https://github.com/adricruzado/get-things-done-app`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+
+## Scripts
+
+- `dev`: Starts the development server using Vite.
+- `build`: Builds the project for production using TypeScript and Vite.
+- `lint`: Lints the project's TypeScript files using ESLint.
+- `preview`: Previews the production build using Vite.
+- `test`: Runs the test suite using Vitest.
+- `test:dev`: Runs the test suite in watch mode using Vitest.
+
+## Author
+
+Adri Cruzado - https://github.com/adricruzado
