@@ -8,6 +8,7 @@ import { vi } from "vitest";
 describe("Given a TaskCard component", () => {
   const toggleDone = vi.fn();
   const deleteTask = vi.fn();
+  const modifyTask = vi.fn();
 
   describe("When it is rendered", () => {
     test("Then it should show a task's description", () => {
@@ -15,7 +16,12 @@ describe("Given a TaskCard component", () => {
       const expectedDescription = taskMock.description;
 
       render(
-        <TaskCard deleteTask={deleteTask} toggleDone={toggleDone} task={task} />
+        <TaskCard
+          modifyTask={modifyTask}
+          deleteTask={deleteTask}
+          toggleDone={toggleDone}
+          task={task}
+        />
       );
 
       const description = screen.getByText(expectedDescription);
