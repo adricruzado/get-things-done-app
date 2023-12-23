@@ -18,12 +18,24 @@ const TaskContainer = (): React.ReactElement => {
     setTasks([...tasks, newTask]);
   };
 
+  const toggleDone = (
+    taskId: string
+  ): React.MouseEventHandler<HTMLParagraphElement> => {
+    return () => {
+      setTasks(
+        tasks.map((task) =>
+          task.id === taskId ? { ...task, isDone: !task.isDone } : task
+        )
+      );
+    };
+  };
+
   return (
     <div className="task-container">
       <h1>Get Things Done!</h1>
       <TaskForm createTask={createTask} />
       {tasks.map((task) => (
-        <TaskCard task={task} key={task.id} />
+        <TaskCard toggleDone={toggleDone} task={task} key={task.id} />
       ))}
     </div>
   );
