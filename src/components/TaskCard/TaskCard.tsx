@@ -7,9 +7,14 @@ import { MouseEventHandler } from "react";
 interface TaskCardProps {
   task: Task;
   toggleDone: (taskId: string) => MouseEventHandler<HTMLParagraphElement>;
+  deleteTask: (taskId: string) => MouseEventHandler<SVGSVGElement>;
 }
 
-const TaskCard = ({ task, toggleDone }: TaskCardProps): React.ReactElement => {
+const TaskCard = ({
+  task,
+  toggleDone,
+  deleteTask,
+}: TaskCardProps): React.ReactElement => {
   return (
     <div className="task">
       <p
@@ -20,7 +25,7 @@ const TaskCard = ({ task, toggleDone }: TaskCardProps): React.ReactElement => {
       </p>
       <div>
         <FontAwesomeIcon icon={faPenToSquare} />
-        <FontAwesomeIcon icon={faTrash} />
+        <FontAwesomeIcon icon={faTrash} onClick={deleteTask(task.id)} />
       </div>
     </div>
   );
