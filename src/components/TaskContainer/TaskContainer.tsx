@@ -30,12 +30,25 @@ const TaskContainer = (): React.ReactElement => {
     };
   };
 
+  const deleteTask = (
+    taskId: string
+  ): React.MouseEventHandler<SVGSVGElement> => {
+    return () => {
+      setTasks(tasks.filter((task) => task.id !== taskId));
+    };
+  };
+
   return (
     <div className="task-container">
       <h1>Get Things Done!</h1>
       <TaskForm createTask={createTask} />
       {tasks.map((task) => (
-        <TaskCard toggleDone={toggleDone} task={task} key={task.id} />
+        <TaskCard
+          deleteTask={deleteTask}
+          toggleDone={toggleDone}
+          task={task}
+          key={task.id}
+        />
       ))}
     </div>
   );
